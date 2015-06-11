@@ -1,5 +1,7 @@
 (function(){
   'use strict';
-  alert("TEST");
+  // alert("TEST");
   $(".outer-container").html(JST.formblogpost());
+
+
 })();
