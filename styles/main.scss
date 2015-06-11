@@ -19,3 +19,14 @@ body {
   background-color: $base-background-color;
   color: $base-font-color;
 }
+
+.form-input-title,
+.form-input-body {
+  display: block;
+  width: 300px;
+  margin: 20px;
+}
+
+.form-input-body {
+  height: 100px;
+}
