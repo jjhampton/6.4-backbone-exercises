@@ -1,4 +1,5 @@
-var Blogpost = Backbone.Model.extend({
+export default Backbone.Model.extend({
+  idAttribute: '_id',
   defaults: function() {
     return {
       name: '',
