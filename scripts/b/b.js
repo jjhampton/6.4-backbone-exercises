@@ -5,7 +5,6 @@ import router from './router';
 
   $(document).ready(function() {
     Backbone.history.start();
-    $('body').html(JST.b.person());
   });
 
 })();
