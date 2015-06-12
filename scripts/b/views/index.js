@@ -25,14 +25,11 @@ export default Backbone.View.extend({
     var address;
     var phoneNumber;
 
-    console.log('submit clicked');
     firstName = $('.form-input-firstname').val();
-    console.log(firstName);
     lastName = this.$('.form-input-lastname').val();
-    console.log(lastName);
     address = this.$('.form-input-address').val();
     phoneNumber = this.$('.form-input-phonenumber').val();
-    this.model.save({
+    this.collection.create({
       firstName: firstName,
       lastName: lastName,
       addres: address,
