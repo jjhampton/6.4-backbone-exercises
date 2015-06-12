@@ -1,12 +1,12 @@
 import router from '.././router';
 
 export default Backbone.View.extend({
-  tagname: 'form',
+  tagName: 'form',
   className: 'form-post',
   template: JST.b.form,
 
   events: {
-    'click .form-input-submit': 'addPerson'
+    'submit': 'addPerson'
   },
 
   initialize: function() {
