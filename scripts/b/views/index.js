@@ -26,17 +26,18 @@ export default Backbone.View.extend({
     var phoneNumber;
 
     console.log('submit clicked');
-    firstName = this.$('form-input-firstname').val();
+    firstName = $('.form-input-firstname').val();
     console.log(firstName);
-    lastName = this.$('form-input-lastname').val();
-    address = this.$('form-input-address').val();
-    phoneNumber = this.$('form-input-phonenumber').val();
+    lastName = this.$('.form-input-lastname').val();
+    console.log(lastName);
+    address = this.$('.form-input-address').val();
+    phoneNumber = this.$('.form-input-phonenumber').val();
     this.model.save({
       firstName: firstName,
       lastName: lastName,
       addres: address,
       phoneNumber: phoneNumber
     });
-    router.history.navigate('people', {trigger: true});
+    Backbone.history.navigate('people', {trigger: true});
   }
 });

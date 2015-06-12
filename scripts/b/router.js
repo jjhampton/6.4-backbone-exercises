@@ -12,7 +12,7 @@ var Router = Backbone.Router.extend({
     this.person = new PersonModel();
   },
   index: function() {
-    var view = new IndexView();
+    var view = new IndexView({model: this.person});
     console.log("index view created");
     $('.outer-container').html(view.el);
   },
