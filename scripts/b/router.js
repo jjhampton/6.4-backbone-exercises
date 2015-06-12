@@ -14,13 +14,17 @@ var Router = Backbone.Router.extend({
     this.people = new PeopleCollection();
   },
   index: function() {
-    var view = new IndexView({collection: this.people});
     console.log("index view created");
+    var view = new IndexView({collection: this.people});
     $('.outer-container').html(view.el);
   },
   people: function() {
-    // var view = new PeopleView();
     console.log("people view created");
+    var view = new PeopleView({collection: this.people});
+    $('.outer-container').html(view.el);
+
+
+
   }
 });
 

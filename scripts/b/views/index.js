@@ -32,7 +32,7 @@ export default Backbone.View.extend({
     this.collection.create({
       firstName: firstName,
       lastName: lastName,
-      addres: address,
+      address: address,
       phoneNumber: phoneNumber
     });
     Backbone.history.navigate('people', {trigger: true});

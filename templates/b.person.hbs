@@ -1,8 +1,10 @@
-<li class="person-list-item">
-  <h3 class="person-header">Person Data</h3>
-  <p class="person-properties"><!--expression:-->First Name</p>
-  <p class="person-properties"><!--expression:-->Last Name</p>
-  <p class="person-properties"><!--expression:-->Address Name</p>
-  <p class="person-properties"><!--expression:-->Phone Number</p>
-</li>
+<h2 class="person-header">Person Data</h1>
+{{#each this}}
+  <li class="person-list-item">
+    <p class="person-properties">{{firstName}}</p>
+    <p class="person-properties">{{lastName}}</p>
+    <p class="person-properties">{{address}}</p>
+    <p class="person-properties">{{phoneNumber}}</p>
+  </li>
+{{/each}}
 <button class="button-navigate-home">Return home</button>

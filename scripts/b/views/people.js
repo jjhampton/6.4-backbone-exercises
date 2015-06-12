@@ -14,12 +14,15 @@ export default Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(this.template(this.collection.toJSON));
+    this.$el.html(this.template(this.collection.toJSON()));
   },
 
   navigateHome: function(event) {
     event.preventDefault();
     Backbone.history.navigate('index', {trigger: true});
+
+    // try router.navigate() ^
+    // import Router constructor
   }
 
 });

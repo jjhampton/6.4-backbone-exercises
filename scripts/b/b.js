@@ -8,3 +8,5 @@ import router from './router';
   });
 
 })();
+
+// window.appRouter = new Router {};
