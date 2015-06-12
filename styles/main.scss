@@ -20,9 +20,7 @@ body {
   color: $base-font-color;
 }
 
-.form-input-title,
-.form-input-body,
-.form-input-submit {
+.form-input {
   display: block;
   width: 300px;
   margin: 20px;
@@ -30,4 +28,9 @@ body {
 
 .form-input-body {
   height: 100px;
+}
+
+.person-list-item {
+  list-style: none;
+  margin: 20px;
 }

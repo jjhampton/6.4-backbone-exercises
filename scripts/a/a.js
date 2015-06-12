@@ -13,7 +13,7 @@ import Blogpost from './models/blogpost';
     }, {dataType: 'text', success: function(){console.log("success");}, error: function(){console.log("errror");}});
   };
 
-  $(".outer-container").html(JST.formblogpost());
+  $(".outer-container").html(JST.a.formblogpost());
   $(".form-post").on("submit", function() {
     event.preventDefault();
     console.log('clicked');
