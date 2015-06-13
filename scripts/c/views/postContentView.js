@@ -1,17 +1,15 @@
 export default Backbone.View.extend({
-  tagName: 'ul',
+  tagName: 'div',
   className: 'post',
-  template: JST.c.sectionPost,
-
-  // events: {
-  //   // 'click .post-title-list-item': SOMETHING
-  // },
+  templatePrompt: JST.c.sectionPrompt,
+  templatePost: JST.c.sectionPost,
 
   initialize: function() {
-    this.render();
+    this.$el.html(this.templatePrompt());
+    // this.listenTo(this.model, 'change:isHidden', this.render); WHAT IS MODEL
   },
 
   render: function() {
-    // this.$el.html(this.template(this.model.toJSON()));
+    this.$el.html(this.templatePost(this.model.toJSON()));
   }
 });

@@ -4,9 +4,11 @@ export default Backbone.View.extend({
   template: JST.c.sidebarPostTitleList,
 
   events: {
-    'click .post-title-list-item': function() {
-      console.log("post title clicked");
-    }
+    // 'click .post-title-list-item': function() {
+      // console.log("post title clicked");
+
+      'click .post-title-list-item': 'displayPost'
+
   },
 
   initialize: function() {
@@ -17,4 +19,8 @@ export default Backbone.View.extend({
   render: function() {
     this.$el.html(this.template(this.collection.toJSON()));
   }
+  //
+  // displayPost: function(e) {
+  //   this.model.set('isHidden', !this.model.get('isHidden'));
+  // }
 });

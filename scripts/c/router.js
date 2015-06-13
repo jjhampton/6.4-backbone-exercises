@@ -25,10 +25,12 @@ var Router = Backbone.Router.extend({
       collection: this.posts
     });
 
+    var postContentView = new PostContentView(); //what options needed
+
 
 
     $('.outer-container').prepend(postTitleListView.el);
-    // $('.outer-container').append(postContentView.el);
+    $('.outer-container').append(postContentView.el);
   },
 
   /*
