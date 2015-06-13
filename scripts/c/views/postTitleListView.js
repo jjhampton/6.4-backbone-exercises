@@ -18,9 +18,10 @@ export default Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template(this.collection.toJSON()));
+  },
+
+  displayPost: function(e) {
+    console.log("list item clicked");
+    // this.model.set('isHidden', !this.model.get('isHidden'));
   }
-  //
-  // displayPost: function(e) {
-  //   this.model.set('isHidden', !this.model.get('isHidden'));
-  // }
 });

@@ -10,6 +10,6 @@ export default Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(this.templatePost(this.model.toJSON()));
+    this.$el.html(this.templatePost(this.model.toJSON())); // what is the model
   }
 });
