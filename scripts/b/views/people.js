@@ -19,7 +19,7 @@ export default Backbone.View.extend({
 
   navigateHome: function(event) {
     event.preventDefault();
-    Backbone.history.navigate('index', {trigger: true});
+    Backbone.history.navigate('', {trigger: true});
 
     // try router.navigate() ^
     // import Router constructor
