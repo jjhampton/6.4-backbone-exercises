@@ -17,11 +17,14 @@ export default Backbone.View.extend({
   },
 
   render: function() {
+    console.log(this.collection.toJSON());
+    console.log(this.template(this.collection.toJSON()));
     this.$el.html(this.template(this.collection.toJSON()));
   },
 
   displayPost: function(e) {
-    console.log("list item clicked");
+    var target = e.currentTarget;
+    console.log("list item clicked, it was " + target.innerText);
     // this.model.set('isHidden', !this.model.get('isHidden'));
   }
 });

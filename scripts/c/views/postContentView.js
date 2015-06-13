@@ -1,5 +1,5 @@
 export default Backbone.View.extend({
-  tagName: 'div',
+  tagName: 'section',
   className: 'post',
   templatePrompt: JST.c.sectionPrompt,
   templatePost: JST.c.sectionPost,
