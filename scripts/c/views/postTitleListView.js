@@ -24,7 +24,7 @@ export default Backbone.View.extend({
 
   displayPost: function(e) {
     var target = e.currentTarget;
-    console.log("list item clicked, it was " + target.innerText);
+    console.log("list item clicked, it was " + target.dataset.index);
     // this.model.set('isHidden', !this.model.get('isHidden'));
   }
 });
