@@ -13,12 +13,13 @@ var Router = Backbone.Router.extend({
 
   initialize: function() {
     this.posts = new PostsCollection();
-    this.posts.fetch();
-    console.log(this.posts);
   },
 
   index: function() {
-
+    var view = new PostTitleListView({
+      collection: this.posts
+    });
+    $('.outer-container').prepend(view.el);
   },
 
   // postDisplay: function() {

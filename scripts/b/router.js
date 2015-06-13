@@ -4,6 +4,7 @@ import PeopleView from'./views/people';
 import {PersonModel} from './models/person';
 import {PeopleCollection} from './models/person';
 
+alert("import worked");
 
 var Router = Backbone.Router.extend({
   routes: {
