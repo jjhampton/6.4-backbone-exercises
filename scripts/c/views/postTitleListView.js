@@ -3,9 +3,11 @@ export default Backbone.View.extend({
   className: 'post-list',
   template: JST.c.sidebarPostTitleList,
 
-  // events: {
-  //   // 'click .post-title-list-item': SOMETHING
-  // },
+  events: {
+    'click .post-title-list-item': function() {
+      console.log("post title clicked");
+    }
+  },
 
   initialize: function() {
     this.render();
