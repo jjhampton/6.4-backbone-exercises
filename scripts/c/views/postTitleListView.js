@@ -9,13 +9,10 @@ export default Backbone.View.extend({
 
   initialize: function() {
     this.render();
+    this.listenTo(this.collection, 'update', this.render);
   },
 
   render: function() {
-    var self = this;
-    this.collection.fetch().then(function(data) {
-      console.log(data);
-      self.$el.html(self.template(data));
-    });
+    this.$el.html(this.template(this.collection.toJSON()));
   }
 });

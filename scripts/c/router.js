@@ -13,6 +13,7 @@ var Router = Backbone.Router.extend({
 
   initialize: function() {
     this.posts = new PostsCollection();
+    this.posts.fetch();
   },
 
   index: function() {
