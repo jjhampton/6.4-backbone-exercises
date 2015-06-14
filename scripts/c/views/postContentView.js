@@ -13,12 +13,10 @@ export default Backbone.View.extend({
     var postToDisplay;
     var clickedPostID = this.model.toJSON().postID;
     var postsCollection = this.collection.toJSON();
-    console.log (clickedPostID);
-    console.log(postsCollection);
 
+    //look through postsCollection list and return the first (and only) value that has clickedPostID as its _id; this is the correct post
     postToDisplay = _.findWhere(postsCollection, {_id: clickedPostID});
-    console.log(postToDisplay);
 
-    this.$el.html(this.templatePost(postToDisplay)); 
+    this.$el.html(this.templatePost(postToDisplay));
   }
 });
