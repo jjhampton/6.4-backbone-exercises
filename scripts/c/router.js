@@ -1,12 +1,10 @@
 import PostTitleListView from './views/postTitleListView';
 import PostContentView from './views/postContentView';
 
-
-
+import PostContentVM from './view-models/postContentViewModel';
 
 import {PostModel} from './models/postModel';
 import {PostsCollection} from './models/postModel';
-
 
 
 var Router = Backbone.Router.extend({
@@ -16,21 +14,22 @@ var Router = Backbone.Router.extend({
   },
 
   initialize: function() {
+    this.postContentVM = new PostContentVM();
+
     this.posts = new PostsCollection();
     this.posts.fetch();
 
-
-
-    var postTitleListView = new PostTitleListView({
+    this.postTitleListView = new PostTitleListView({
+      model: this.postContentVM,
       collection: this.posts
     });
 
-    var postContentView = new PostContentView(); //what options needed
+    this.postContentView = new PostContentView({
+      model: this.postContentVM
+    });
 
-
-
-    $('.outer-container').prepend(postTitleListView.el);
-    $('.outer-container').append(postContentView.el);
+    $('.outer-container').prepend(this.postTitleListView.el);
+    $('.outer-container').append(this.postContentView.el);
   },
 
   /*

@@ -4,11 +4,7 @@ export default Backbone.View.extend({
   template: JST.c.sidebarPostTitleList,
 
   events: {
-    // 'click .post-title-list-item': function() {
-      // console.log("post title clicked");
-
-      'click .post-title-list-item': 'dispatcher'
-
+    'click .post-title-list-item': 'dispatcher'
   },
 
   initialize: function() {
@@ -17,19 +13,25 @@ export default Backbone.View.extend({
   },
 
   render: function() {
-    console.log(this.collection.toJSON());
     console.log(this.template(this.collection.toJSON()));
     this.$el.html(this.template(this.collection.toJSON()));
   },
 
   dispatcher: function(event) {
-    this.getPostData(event);
+    //gets post ID data by passing in click event parameter,
+    //then passes that value to setViewModelID to set postID value on model
+    this.setViewModelID(this.getPostData(event));
   },
 
   getPostData: function(event) {
     var target = event.currentTarget;
     var postID = target.dataset.index;
     console.log("list item clicked, it was " + postID);
-    // this.model.set('isHidden', !this.model.get('isHidden'));
+    return postID;
+  },
+
+  setViewModelID: function(option) {
+    this.model.set({postID: option});
+    console.log(this.model.get('postID') + "is the model ID now");
   }
 });
