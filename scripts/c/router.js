@@ -14,10 +14,12 @@ var Router = Backbone.Router.extend({
   },
 
   initialize: function() {
-    this.postContentVM = new PostContentVM();
-
     this.posts = new PostsCollection();
     this.posts.fetch();
+
+    this.postContentVM = new PostContentVM({
+      collection: this.posts
+    });
 
     this.postTitleListView = new PostTitleListView({
       model: this.postContentVM,
@@ -25,7 +27,8 @@ var Router = Backbone.Router.extend({
     });
 
     this.postContentView = new PostContentView({
-      model: this.postContentVM
+      model: this.postContentVM,
+      collection: this.posts
     });
 
     $('.outer-container').prepend(this.postTitleListView.el);

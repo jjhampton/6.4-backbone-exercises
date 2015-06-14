@@ -6,10 +6,11 @@ export default Backbone.View.extend({
 
   initialize: function() {
     this.$el.html(this.templatePrompt());
-    // this.listenTo(this.model, 'change:isHidden', this.render); WHAT IS MODEL
+    this.listenTo(this.model, 'change:postID', this.render);
   },
 
   render: function() {
+    console.log(this.model.toJSON());
     this.$el.html(this.templatePost(this.model.toJSON())); // what is the model
   }
 });
