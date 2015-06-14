@@ -11,7 +11,7 @@ var BookmarkModel = Backbone.Model.extend({
   idAttribute: '_id'
 });
 
-var BookmarksCollection = ({
+var BookmarksCollection = Backbone.Collection.extend({
   url: 'http://tiny-lasagna-server.herokuapp.com/collections/hamptonbookmarks',
   model: BookmarkModel
 });
