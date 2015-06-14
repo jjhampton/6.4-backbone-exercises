@@ -4,6 +4,7 @@
   'use strict';
   alert("YO");
   $(document).ready(function() {
+    $('outer-container').html(JST.d.createBookmark());
     // Backbone.history.start()
 
   });

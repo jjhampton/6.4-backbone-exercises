@@ -4,7 +4,7 @@ import router from './router';
   'use strict';
 
   $(document).ready(function() {
-    Backbone.history.start()
+    Backbone.history.start();
 
   });
 

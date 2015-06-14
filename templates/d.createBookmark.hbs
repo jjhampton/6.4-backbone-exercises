@@ -1,0 +1,14 @@
+<header>
+  <button>+</button>
+</header>
+{{#unless isHidden}}
+  <form class="form-create-bookmark">
+    <p>Enter a bookmark</p>
+    <label for="title">Title</label>
+    <input type="text" name="title">
+    <label for="url">URL</label>
+    <input type="url" name="url">
+    <label for="tag">Tag</label>
+    <input type="text" name="tag">
+  </form>
+{{/unless}}
