@@ -1,15 +1,10 @@
-// import router from './router';
+import router from './router';
 
 (function() {
   'use strict';
-  alert("YO");
+
   $(document).ready(function() {
-    // Backbone.history.start()
-    $('.outer-container').prepend(JST.d.createBookmark());
-    $('.outer-container').append(JST.d.index());
-
-
-
+    Backbone.history.start();
   });
 
 })();
