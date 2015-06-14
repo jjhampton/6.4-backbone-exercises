@@ -7,7 +7,7 @@ export default Backbone.View.extend({
     // 'click .post-title-list-item': function() {
       // console.log("post title clicked");
 
-      'click .post-title-list-item': 'getPostData'
+      'click .post-title-list-item': 'dispatcher'
 
   },
 
@@ -22,9 +22,14 @@ export default Backbone.View.extend({
     this.$el.html(this.template(this.collection.toJSON()));
   },
 
-  getPostData: function(e) {
-    var target = e.currentTarget;
-    console.log("list item clicked, it was " + target.dataset.index);
+  dispatcher: function(event) {
+    this.getPostData(event);
+  },
+
+  getPostData: function(event) {
+    var target = event.currentTarget;
+    var postID = target.dataset.index;
+    console.log("list item clicked, it was " + postID);
     // this.model.set('isHidden', !this.model.get('isHidden'));
   }
 });
