@@ -1,5 +1,5 @@
 var PostModel = Backbone.Model.extend({
-  idAttribute: '_id',  //MAY NEED DEFAULTS, ADD IF NECESSARY
+  idAttribute: '_id',  
 });
 
 var PostsCollection = Backbone.Collection.extend({

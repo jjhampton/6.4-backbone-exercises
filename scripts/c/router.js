@@ -1,8 +1,6 @@
 import PostTitleListView from './views/postTitleListView';
 import PostContentView from './views/postContentView';
 
-import PostContentVM from './view-models/postContentViewModel';
-
 import {PostModel} from './models/postModel';
 import {PostsCollection} from './models/postModel';
 
@@ -10,24 +8,24 @@ import {PostsCollection} from './models/postModel';
 var Router = Backbone.Router.extend({
   routes: {
     '': 'index',
-    'posts/:id': 'show'
+    // 'posts/:id': 'show'
   },
 
   initialize: function() {
     this.posts = new PostsCollection();
     this.posts.fetch();
 
-    this.postContentVM = new PostContentVM({
+    this.postModel = new PostModel({
       collection: this.posts
     });
 
     this.postTitleListView = new PostTitleListView({
-      model: this.postContentVM,
+      model: this.postModel,
       collection: this.posts
     });
 
     this.postContentView = new PostContentView({
-      model: this.postContentVM,
+      model: this.postModel,
       collection: this.posts
     });
 
@@ -44,11 +42,11 @@ var Router = Backbone.Router.extend({
     //   collection: this.posts
     // });
     // $('.outer-container').prepend(view.el);
-  },
-
-  show: function(id) {
-    console.log(id);
   }
+
+  // show: function(id) {
+  //   console.log(id);
+  // }
 });
 
 var router = new Router();

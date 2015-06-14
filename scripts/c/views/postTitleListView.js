@@ -26,12 +26,10 @@ export default Backbone.View.extend({
   getPostData: function(event) {
     var target = event.currentTarget;
     var postID = target.dataset.index;
-    console.log("list item clicked, it was " + postID);
     return postID;
   },
 
   setViewModelID: function(option) {
     this.model.set({postID: option});
-    console.log(this.model.get('postID') + "is the model ID now");
   }
 });

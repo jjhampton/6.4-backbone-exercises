@@ -10,7 +10,15 @@ export default Backbone.View.extend({
   },
 
   render: function() {
-    console.log(this.model.toJSON());
-    this.$el.html(this.templatePost(this.model.toJSON())); // what is the model
+    var postToDisplay;
+    var clickedPostID = this.model.toJSON().postID;
+    var postsCollection = this.collection.toJSON();
+    console.log (clickedPostID);
+    console.log(postsCollection);
+
+    postToDisplay = _.findWhere(postsCollection, {_id: clickedPostID});
+    console.log(postToDisplay);
+
+    this.$el.html(this.templatePost(postToDisplay)); 
   }
 });
