@@ -1,0 +1,22 @@
+<section class="bookmark-list">
+  <h1 class="list-header">My Bookmarks</h1>
+  <ul>
+    {{!-- {{#each this}} --}}
+      <li>
+        <a href={{url}}>TITLE{{title}}</a>
+        <p>Tag: {{tag}}</p>
+        <p>Added on: {{created_at}}</p>
+      </li>
+    {{!-- {{/each}} --}}
+  </ul>
+</section>
+<sidebar class="tag-list">
+  <h1 class="list-header">My Tags</h1>
+  <ul>
+    {{!-- {{#each this}} --}}
+      <li>
+        <p>Tag: {{tag}}</p>
+      </li>
+    {{!-- {{/each}} --}}
+  </ul>
+</sidebar>

@@ -4,8 +4,11 @@
   'use strict';
   alert("YO");
   $(document).ready(function() {
-    $('outer-container').html(JST.d.createBookmark());
     // Backbone.history.start()
+    $('.outer-container').prepend(JST.d.createBookmark());
+    $('.outer-container').append(JST.d.index());
+
+
 
   });
 

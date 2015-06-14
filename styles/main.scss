@@ -20,6 +20,25 @@ body {
   color: $base-font-color;
 }
 
+header {
+  background-color: $light-gray;
+  border: 1px solid $medium-gray;
+}
+
+.header-bookmark-text {
+  display: inline-block;
+}
+
+.form-create-bookmark {
+  border: 1px solid $medium-gray;
+  border-top: none;
+  padding: 10px;
+}
+
+.form-create-bookmark-submit {
+  margin-left: 20px;
+}
+
 .form-input {
   display: block;
   width: 300px;
@@ -51,4 +70,28 @@ body {
   margin: 0;
   padding: 20px;
   border: 1px solid blue;
+}
+
+.bookmark-list,
+.tag-list {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  background-color: $light-gray;
+
+}
+
+.bookmark-list {
+  width: 65%;
+  border: 1px solid blue;
+}
+
+.tag-list {
+  width: 30%;
+  float: right;
+  border: 1px solid red;
+}
+
+.list-header {
+  text-align: center;
 }
