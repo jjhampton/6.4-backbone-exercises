@@ -32,19 +32,22 @@ var Router = Backbone.Router.extend({
 
     $('.outer-container').prepend(this.postTitleListView.el);
     $('.outer-container').append(JST.c.sectionPrompt);
-    // var view = new PostTitleListView({
-    //   collection: this.posts
-    // });
-    // $('.outer-container').prepend(view.el);
   },
 
   show: function(id) {
-    console.log(id);
-
+    var clickedPost = _.findWhere(this.posts.toJSON(), {_id: id.toString()});
     this.postContentView = new PostContentView({
-      model: this.postModel,
-      collection: this.posts
+      model: clickedPost
+      // collection: this.posts
     });
+    //invoke showView to display postContentView, bind to outer this since showView will use this syntax within
+    this.showView(this.postContentView).bind(this);
+  },
+
+  showView: function(view) {
+    this.currentView = view;
+    $('.post').replaceWith(view.el);
+    return view;
   }
 });
 
