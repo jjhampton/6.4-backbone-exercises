@@ -1,12 +1,11 @@
 export default Backbone.View.extend({
   tagName: 'section',
   className: 'post',
-  templatePrompt: JST.c.sectionPrompt,
   templatePost: JST.c.sectionPost,
 
   initialize: function() {
-    this.$el.html(this.templatePrompt());
-    this.listenTo(this.model, 'change:postID', this.render);
+    // this.listenTo(this.model, 'change:postID', this.render);
+    this.render();
   },
 
   render: function() {
