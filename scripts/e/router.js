@@ -58,6 +58,7 @@ var Router = Backbone.Router.extend({
 
   update: function() {
     console.log("edit clicked");
+    $('.post').replaceWith(JST.e.postUpdate());
   },
 
   delete: function() {
