@@ -33,6 +33,10 @@ header {
   display: inline-block;
 }
 
+.header-button-navigate-home {
+  margin-left: 100px;
+}
+
 .form-create-post {
   border: 1px solid $medium-gray;
   border-top: none;
@@ -114,5 +118,16 @@ header {
 }
 
 .list-header {
+  text-align: center;
+}
+
+.post-prompt-heading {
+  font-weight: bold;
+  text-align: center;
+}
+
+.post-prompt-text {
+  font-size: 1.5em;
+  margin: 20px;
   text-align: center;
 }

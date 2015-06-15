@@ -5,7 +5,8 @@ export default Backbone.View.extend({
 
   events: {
     'click .header-button-add-post': 'toggleForm',
-    'submit .form-create-post': 'createPost'
+    'submit .form-create-post': 'createPost',
+    'click .header-button-navigate-home': 'routeHome'
   },
 
   initialize: function(){
@@ -30,5 +31,9 @@ export default Backbone.View.extend({
       body: this.$('.form-create-post-body').val()
     }, {wait: true});
     this.toggleForm();
+  },
+
+  routeHome: function() {
+    Backbone.history.navigate('', {trigger: true});
   }
 });
