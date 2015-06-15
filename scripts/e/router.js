@@ -26,7 +26,7 @@ var Router = Backbone.Router.extend({
     this.createPostVM = new CreatePostVM();
 
     this.postsCollection = new PostsCollection();
-    this.postsCollection.fetch();
+    this.fetchPostsCollectionPromise = this.postsCollection.fetch();
 
     this.createPostView = new CreatePostView({
       model: this.createPostVM,
@@ -44,9 +44,9 @@ var Router = Backbone.Router.extend({
 
   index: function() {
     console.log("index callback routed");
-    $('.outer-container').prepend(this.createPostView.el);
-    $('.outer-container').append(this.postTitlesListView.el);
-    $('.outer-container').append(JST.e.postPrompt());
+    $('body').prepend(this.createPostView.el);
+    $('.post-titles-container').html(this.postTitlesListView.el);
+    $('.post-container').html(JST.e.postPrompt());
 
   },
 
@@ -55,7 +55,7 @@ var Router = Backbone.Router.extend({
     // METHOD FROM CLASS DEMO
 
     console.log(id);
-    this.postsCollection.fetch().then(function(data){
+    this.fetchPostsCollectionPromise.then(function(data){
       console.log(data);
       var clickedPost = this.postsCollection.get(id);
       this.postView = new PostView({
@@ -89,17 +89,19 @@ var Router = Backbone.Router.extend({
 
   update: function() {
     console.log("edit clicked");
-
-    $('.post').replaceWith(this.postUpdateView.el); // switch out with view
+    this.showView(this.postUpdateView);
+    // $('.post').replaceWith(this.postUpdateView.el); // switch out with view
   },
 
   delete: function() {
     console.log("delete clicked");
   },
 
-  // Replace w/ Jake's showView that uses currentView and remove method
   showView: function(view) {
-    $('.post').replaceWith(view.el);
+    if (this.currentView) this.currentView.remove(); // removes previously existing view from DOM and stops any event listeners it has
+    this.currentView = view;
+    $('.post-container').html(view.el);
+    return view;
   }
 });
 
