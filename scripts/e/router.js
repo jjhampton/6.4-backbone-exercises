@@ -55,7 +55,7 @@ var Router = Backbone.Router.extend({
     this.postView = new PostView({
       model: clickedPost
     });
-    // front-load postUpdateView with the clickedPost model so it can generate placeholder text if the edit button is clicked
+    // front-load postUpdateView with the clickedPost model so it can generate placeholder text if the edit button is clicked **WON'T WORK**
     this.postUpdateView = new PostUpdateView({
       model: clickedPost
     });
