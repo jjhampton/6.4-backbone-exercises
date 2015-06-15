@@ -15,7 +15,9 @@ import CreatePostVM from './view-models/createPostVM';
 var Router = Backbone.Router.extend({
   routes: {
     '': 'index',
-    'posts/:id': 'show'
+    'posts/:id': 'showPost',
+    'update': 'update',
+    'delete': 'delete'
   },
 
   initialize: function() {
@@ -46,12 +48,20 @@ var Router = Backbone.Router.extend({
 
   },
 
-  show: function(id) {
+  showPost: function(id) {
     var clickedPost = _.findWhere(this.postsCollection.toJSON(), {_id: id.toString()});
     this.postView = new PostView({
       model: clickedPost
     });
     this.showView(this.postView);
+  },
+
+  update: function() {
+    console.log("edit clicked");
+  },
+
+  delete: function() {
+    console.log("delete clicked");
   },
 
   showView: function(view) {
