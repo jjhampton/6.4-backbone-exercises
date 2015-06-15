@@ -28,7 +28,7 @@ export default Backbone.View.extend({
     this.collection.create({
       title: this.$('.form-create-post-title').val(),
       body: this.$('.form-create-post-body').val()
-    });
+    }, {wait: true});
     this.toggleForm();
   }
 });
