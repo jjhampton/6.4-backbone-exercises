@@ -25,18 +25,24 @@ header {
   border: 1px solid $medium-gray;
 }
 
-.header-bookmark-text {
+.header-post-text {
   display: inline-block;
 }
 
-.form-create-bookmark {
+.form-create-post {
   border: 1px solid $medium-gray;
   border-top: none;
   padding: 10px;
 }
 
-.form-create-bookmark-submit {
-  margin-left: 20px;
+.form-create-post-title,
+.form-create-post-body {
+  display: block;
+  width: 600px;;
+}
+
+.form-create-post-body {
+  height: 200px;
 }
 
 .form-input {
