@@ -1,15 +1,15 @@
-// import router from './router';
+import router from './router';
 
 (function() {
   'use strict';
   alert("E");
   $(document).ready(function() {
-    $('.outer-container').prepend(JST.e.createPost());
-    $('.outer-container').append(JST.e.postTitlesList());
-    $('.outer-container').append(JST.e.post());
+    // $('.outer-container').prepend(JST.e.createPost());
+    // $('.outer-container').append(JST.e.postTitlesList());
+    // $('.outer-container').append(JST.e.post());
 
 
-    // Backbone.history.start();
+    Backbone.history.start();
   });
 
 })();
