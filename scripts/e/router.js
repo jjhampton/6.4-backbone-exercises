@@ -51,18 +51,40 @@ var Router = Backbone.Router.extend({
   },
 
   showPost: function(id) {
-    var clickedPost = _.findWhere(this.postsCollection.toJSON(), {_id: id.toString()});
-    this.postView = new PostView({
-      model: clickedPost
-    });
+
+    // METHOD FROM CLASS DEMO
+
+    console.log(id);
+    this.postsCollection.fetch().then(function(data){
+      console.log(data);
+      var clickedPost = this.postsCollection.get(id);
+      this.postView = new PostView({
+        model: clickedPost
+      });
+      this.postUpdateView = new PostUpdateView({
+        model: clickedPost
+      });
+      // this.postDeleteView = new PostDeleteView({
+      //   model: clickedPost
+      // });  NEED TO IMPORT VIEW CONSTRUCTOR
+      this.showView(this.postView);
+    }.bind(this));
+
+
+    // ALTERNATE METHOD THAT WORKS INITIALLY BUT CREATES PROBLEMS LATER
+
+    // var clickedPost = _.findWhere(this.postsCollection.toJSON(), {_id: id.toString()});
+    // this.postView = new PostView({
+    //   model: clickedPost
+    // });
+
     // front-load postUpdateView with the clickedPost model so it can generate placeholder text if the edit button is clicked **WON'T WORK**
-    this.postUpdateView = new PostUpdateView({
-      model: clickedPost
-    });
+    // this.postUpdateView = new PostUpdateView({
+    //   model: clickedPost
+    // });
     // this.postDeleteView = new PostDeleteView({
     //   model: clickedPost
     // });
-    this.showView(this.postView);
   },
 
   update: function() {
@@ -75,6 +97,7 @@ var Router = Backbone.Router.extend({
     console.log("delete clicked");
   },
 
+  // Replace w/ Jake's showView that uses currentView and remove method
   showView: function(view) {
     $('.post').replaceWith(view.el);
   }

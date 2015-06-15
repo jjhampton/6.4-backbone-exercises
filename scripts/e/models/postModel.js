@@ -5,6 +5,12 @@ var PostModel = Backbone.Model.extend({
     };
   },
 
+  toJSON: function() {
+    return _.extend({}, _.omit(this.attributes, '_id'), {
+      id: this.id
+    });
+  },
+
   idAttribute: '_id'
 });
 
