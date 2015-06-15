@@ -6,6 +6,8 @@ import {PostsCollection} from './models/postModel';
 import CreatePostView from './views/createPostView';
 import PostTitlesListView from './views/postTitlesListView';
 import PostView from './views/postView';
+import PostUpdateView from './views/postUpdateView';
+
 
 
 import CreatePostVM from './view-models/createPostVM';
@@ -53,12 +55,20 @@ var Router = Backbone.Router.extend({
     this.postView = new PostView({
       model: clickedPost
     });
+    // front-load postUpdateView with the clickedPost model so it can generate placeholder text if the edit button is clicked
+    this.postUpdateView = new PostUpdateView({
+      model: clickedPost
+    });
+    // this.postDeleteView = new PostDeleteView({
+    //   model: clickedPost
+    // });
     this.showView(this.postView);
   },
 
   update: function() {
     console.log("edit clicked");
-    $('.post').replaceWith(JST.e.postUpdate());
+
+    $('.post').replaceWith(this.postUpdateView.el); // switch out with view
   },
 
   delete: function() {
