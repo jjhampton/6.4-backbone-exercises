@@ -28,6 +28,6 @@ export default Backbone.View.extend({
       }
     });
     //route to index afterwards
-    Backbone.history.navigate('index', {trigger: true});
+    Backbone.history.navigate('', {trigger: true});
   }
 });
