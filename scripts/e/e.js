@@ -5,6 +5,10 @@
   alert("E");
   $(document).ready(function() {
     $('.outer-container').prepend(JST.e.createPost());
+    $('.outer-container').append(JST.e.postTitlesList());
+    $('.outer-container').append(JST.e.post());
+
+
     // Backbone.history.start();
   });
 

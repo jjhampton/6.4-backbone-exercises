@@ -60,21 +60,19 @@ header {
   margin: 20px;
 }
 
-.post-list {
+.post-titles-list {
   display: inline-block;
   vertical-align: top;
   width: 25%;
   margin: 0;
-  padding: 20px;
   border: 1px solid red;
 }
 
 .post {
   display: inline-block;
   vertical-align: top;
+  float: right;
   width:70%;
-  margin: 0;
-  padding: 20px;
   border: 1px solid blue;
 }
 
