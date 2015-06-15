@@ -16,7 +16,7 @@ export default Backbone.View.extend({
   },
 
   updatePost: function(event) {
-    event.preventDefault(); // need to route to original post afterwards
+    event.preventDefault();
     var id = this.model.toJSON().id;
     console.log(id);
     var title = $('.form-create-post-title').val();
@@ -26,6 +26,7 @@ export default Backbone.View.extend({
       body: body,
       edited_at: new Date()
     });
+    //route to original post afterwards
     Backbone.history.navigate('posts/' + id, {trigger: true});
   }
 });

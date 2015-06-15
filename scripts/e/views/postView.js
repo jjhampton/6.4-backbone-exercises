@@ -4,8 +4,8 @@ export default Backbone.View.extend({
   template: JST.e.post,
 
   events: {
-    'click .post-button-update': 'updatePostRoute'
-    // 'click .post-button-delete': 'deletePostRoute'
+    'click .post-button-update': 'updatePostRoute',
+    'click .post-button-delete': 'deletePostRoute'
   },
 
   initialize: function() {
@@ -18,5 +18,9 @@ export default Backbone.View.extend({
 
   updatePostRoute: function() {
     Backbone.history.navigate('update', {trigger: true});
+  },
+
+  deletePostRoute: function() {
+    Backbone.history.navigate('delete', {trigger: true});
   }
 });

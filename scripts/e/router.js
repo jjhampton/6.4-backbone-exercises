@@ -7,7 +7,7 @@ import CreatePostView from './views/createPostView';
 import PostTitlesListView from './views/postTitlesListView';
 import PostView from './views/postView';
 import PostUpdateView from './views/postUpdateView';
-
+import PostDeleteView from './views/postDeleteView';
 
 
 import CreatePostVM from './view-models/createPostVM';
@@ -51,6 +51,7 @@ var Router = Backbone.Router.extend({
   },
 
   showPost: function(id) {
+    console.log("showPost callback routed");
 
     // METHOD FROM CLASS DEMO
 
@@ -62,9 +63,9 @@ var Router = Backbone.Router.extend({
       this.postUpdateView = new PostUpdateView({
         model: clickedPost
       });
-      // this.postDeleteView = new PostDeleteView({
-      //   model: clickedPost
-      // });  NEED TO IMPORT VIEW CONSTRUCTOR
+      this.postDeleteView = new PostDeleteView({
+        model: clickedPost
+      });
       this.showView(this.postView);
     }.bind(this));
 
@@ -92,6 +93,7 @@ var Router = Backbone.Router.extend({
 
   delete: function() {
     console.log("delete clicked");
+    this.showView(this.postDeleteView);
   },
 
   showView: function(view) {
