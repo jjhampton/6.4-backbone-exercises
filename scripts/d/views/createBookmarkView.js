@@ -30,6 +30,7 @@ export default Backbone.View.extend({
       url: this.$('.form-create-bookmark-url').val(),
       tag: this.$('.form-create-bookmark-tag').val()
     });
+    this.toggleForm();
   }
 
 
