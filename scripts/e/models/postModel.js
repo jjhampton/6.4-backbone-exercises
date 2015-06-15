@@ -1,4 +1,10 @@
 var PostModel = Backbone.Model.extend({
+  defaults: function() {
+    return {
+      created_at: new Date()
+    };
+  },
+
   idAttribute: '_id'
 });
 
