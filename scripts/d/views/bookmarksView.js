@@ -22,7 +22,7 @@ export default Backbone.View.extend({
 
     //look through bookmarksCollection and return the first (and only) value that has clickedTag as its tag value; this is the correct bookmark to display and pass into the view element
 
-    bookmarkToDisplay = _.findWhere(bookmarksCollection, {tag: clickedTag});
+    bookmarkToDisplay = _.where(bookmarksCollection, {tag: clickedTag});
 
     this.$el.html(this.templateBookmarksFilter(bookmarkToDisplay));
   }

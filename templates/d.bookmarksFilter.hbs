@@ -1,8 +1,10 @@
 <h1 class="list-header">My Bookmarks</h1>
 <ul class="bookmarks-list">
-  <li class="bookmark-list-item">
-    <p>Title: {{title}}</p>
-    <p>URL: {{url}}</p>
-    <p>Tag: {{tag}}</p>
-  </li>
+  {{#each this}}
+    <li class="bookmark-list-item">
+      <p>Title: {{title}}</p>
+      <p>URL: {{url}}</p>
+      <p>Tag: {{tag}}</p>
+    </li>
+  {{/each}}
 </ul>
