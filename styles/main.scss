@@ -12,7 +12,7 @@ $light-gray: #ddd;
 $very-light-gray: #fafafa;
 
 $base-font-color: $dark-gray;
-$base-background-color: $very-light-gray;
+$base-background-color: #FFDE99;
 
 body {
   font-family: $base-font-family;
@@ -20,8 +20,12 @@ body {
   color: $base-font-color;
 }
 
+a {
+    color: inherit;
+}
+
 header {
-  background-color: $light-gray;
+  background-color: #FFC349;
   border: 1px solid $medium-gray;
 }
 
@@ -65,7 +69,19 @@ header {
   vertical-align: top;
   width: 25%;
   margin: 0;
-  border: 1px solid red;
+  background-color: #FFCF6D;
+  border: 1px solid $medium-gray;
+}
+
+.post-titles-list-header {
+  font-weight: bold;
+}
+
+.post-title-list-item {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 10px;
 }
 
 .post {
@@ -73,7 +89,8 @@ header {
   vertical-align: top;
   float: right;
   width:70%;
-  border: 1px solid blue;
+  background-color: #FFCF6D;
+  border: 1px solid $medium-gray;
 }
 
 .bookmarks-section,

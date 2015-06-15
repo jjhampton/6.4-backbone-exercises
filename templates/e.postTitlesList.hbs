@@ -1,4 +1,4 @@
-<p>Blog Posts</p>
+<h2 class="post-titles-list-header">Blog Posts</h2>
 {{#each this}}
-  <li class="post-title-list-item" data-index="{{_id}}">{{title}}</li>
+  <li class="post-title-list-item"><a href="#posts/{{_id}}">{{title}}</li>
 {{/each}}
