@@ -1,7 +1,7 @@
 //NEED IMPORTS
 
 import {PostModel} from './models/postModel';
-import {BookmarksCollection} from './models/postModel';
+import {PostsCollection} from './models/postModel';
 
 import CreatePostView from './views/createPostView';
 
@@ -20,7 +20,7 @@ var Router = Backbone.Router.extend({
     this.createPostVM = new CreatePostVM();
 
     this.postsCollection = new PostsCollection();
-    this.posts.fetch();
+    this.postsCollection.fetch();
 
     this.createPostView = new CreatePostView({
       model: this.createPostVM,
@@ -33,6 +33,8 @@ var Router = Backbone.Router.extend({
   */
 
   index: function() {
+    console.log("index callback routed");
+    $('.outer-container').prepend(this.createPostView.el);
 
   },
 

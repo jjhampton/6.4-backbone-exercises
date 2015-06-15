@@ -1,7 +1,7 @@
 // credit: Jacob Smith's example 6.4-image-board demo at https://github.com/TIY-GVL-FEE-2015-May/6.4-image-board/blob/master/scripts/view-models/create-form.js
 
 export default Backbone.View.extend({
-  template: JST.d.createPost,
+  template: JST.e.createPost,
 
   events: {
     'click .header-button-add-post': 'toggleForm',
