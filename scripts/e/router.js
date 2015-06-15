@@ -4,9 +4,9 @@ import {PostModel} from './models/postModel';
 import {PostsCollection} from './models/postModel';
 
 import CreatePostView from './views/createPostView';
+import PostTitlesListView from './views/postTitlesListView';
 
 import CreatePostVM from './view-models/createPostVM';
-
 
 
 
@@ -26,6 +26,10 @@ var Router = Backbone.Router.extend({
       model: this.createPostVM,
       collection: this.postsCollection
     });
+
+    this.postTitlesListView = new PostTitlesListView({
+      collection: this.postsCollection
+    });
   },
 
   /*
@@ -35,6 +39,8 @@ var Router = Backbone.Router.extend({
   index: function() {
     console.log("index callback routed");
     $('.outer-container').prepend(this.createPostView.el);
+    $('.outer-container').append(this.postTitlesListView.el);
+
 
   },
 

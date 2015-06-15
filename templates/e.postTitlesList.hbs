@@ -1,5 +1,4 @@
-    <ul class="post-titles-list">
-      <li class="post-title-list-item" data-index="{{_id}}">TITLE{{title}}</li>
-      <li class="post-title-list-item" data-index="{{_id}}">TITLE{{title}}</li>
-      <li class="post-title-list-item" data-index="{{_id}}">TITLE{{title}}</li>
-    </ul>
+<p>Blog Posts</p>
+{{#each this}}
+  <li class="post-title-list-item" data-index="{{_id}}">{{title}}</li>
+{{/each}}
