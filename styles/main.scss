@@ -72,8 +72,8 @@ header {
   border: 1px solid blue;
 }
 
-.bookmark-list,
-.tag-list {
+.bookmarks-section,
+.tags-sidebar {
   display: inline-block;
   vertical-align: top;
   margin: 10px;
@@ -81,12 +81,12 @@ header {
 
 }
 
-.bookmark-list {
+.bookmarks-section {
   width: 65%;
   border: 1px solid blue;
 }
 
-.tag-list {
+.tags-sidebar {
   width: 30%;
   float: right;
   border: 1px solid red;

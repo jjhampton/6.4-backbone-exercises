@@ -5,7 +5,7 @@ export default Backbone.View.extend({
 
   events: {
     'click .header-button-addbookmark': 'toggleForm',
-    'submit form-create-bookmark': 'createBoomkark'
+    'submit .form-create-bookmark': 'createBookmark'
   },
 
   initialize: function(){
@@ -23,6 +23,7 @@ export default Backbone.View.extend({
   },
 
   createBookmark: function(event){
+    console.log("form submitted");
     event.preventDefault();
     this.collection.create({
       title: this.$('.form-create-bookmark-title').val(),
