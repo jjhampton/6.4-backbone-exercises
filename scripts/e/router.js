@@ -51,7 +51,7 @@ var Router = Backbone.Router.extend({
     this.postView = new PostView({
       model: clickedPost
     });
-    this.showView(this.postView).bind(this);
+    this.showView(this.postView);
   },
 
   showView: function(view) {
