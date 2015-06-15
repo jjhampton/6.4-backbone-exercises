@@ -16,15 +16,16 @@ export default Backbone.View.extend({
   },
 
   updatePost: function(event) {
-    console.log("edit form submitted");
     event.preventDefault(); // need to route to original post afterwards
+    var id = this.model.toJSON().id;
+    console.log(id);
     var title = $('.form-create-post-title').val();
     var body = $('.form-create-post-body').val();
-    console.log(this.model);
     this.model.save({
       title: title,
       body: body,
       edited_at: new Date()
     });
+    Backbone.history.navigate('posts/' + id, {trigger: true});
   }
 });

@@ -54,9 +54,7 @@ var Router = Backbone.Router.extend({
 
     // METHOD FROM CLASS DEMO
 
-    console.log(id);
-    this.fetchPostsCollectionPromise.then(function(data){
-      console.log(data);
+    this.fetchPostsCollectionPromise.then(function(){
       var clickedPost = this.postsCollection.get(id);
       this.postView = new PostView({
         model: clickedPost
@@ -90,7 +88,6 @@ var Router = Backbone.Router.extend({
   update: function() {
     console.log("edit clicked");
     this.showView(this.postUpdateView);
-    // $('.post').replaceWith(this.postUpdateView.el); // switch out with view
   },
 
   delete: function() {

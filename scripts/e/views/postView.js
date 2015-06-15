@@ -5,7 +5,7 @@ export default Backbone.View.extend({
 
   events: {
     'click .post-button-update': 'updatePostRoute'
-    // 'click post-button-delete': 'deletePostRoute'
+    // 'click .post-button-delete': 'deletePostRoute'
   },
 
   initialize: function() {
