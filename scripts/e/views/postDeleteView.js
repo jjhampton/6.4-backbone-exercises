@@ -17,8 +17,6 @@ export default Backbone.View.extend({
 
   deletePost: function(event) {
     event.preventDefault();
-    var id = this.model.toJSON().id;
-    console.log(id);
     this.model.destroy({
       success: function(){
         console.log("destroy successful");
