@@ -1,0 +1,16 @@
+<header>
+  <button class="header-button-addbookmark">+</button>
+  <p class="header-bookmark-text">Click to add a bookmark</p>
+</header>
+{{#unless isHidden}}
+  <form class="form-create-bookmark">
+    <p>Add a bookmark below</p>
+    <label for="title">Title</label>
+    <input class="form-create-bookmark-title" type="text" name="title">
+    <label for="url">URL</label>
+    <input class="form-create-bookmark-url" type="url" name="url">
+    <label for="tag">Tag</label>
+    <input class="form-create-bookmark-tag" type="text" name="tag">
+    <input class="form-create-bookmark-submit" type="submit">
+  </form>
+{{/unless}}

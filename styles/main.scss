@@ -12,10 +12,123 @@ $light-gray: #ddd;
 $very-light-gray: #fafafa;
 
 $base-font-color: $dark-gray;
-$base-background-color: $very-light-gray;
+$base-background-color: #FFDE99;
 
 body {
   font-family: $base-font-family;
   background-color: $base-background-color;
   color: $base-font-color;
+}
+
+a {
+    color: inherit;
+}
+
+header {
+  background-color: #FFC349;
+  border: 1px solid $medium-gray;
+}
+
+.header-post-text {
+  display: inline-block;
+}
+
+.header-button-navigate-home {
+  margin-left: 100px;
+}
+
+.form-create-post {
+  border: 1px solid $medium-gray;
+  border-top: none;
+  padding: 10px;
+}
+
+.form-create-post-title,
+.form-create-post-body {
+  display: block;
+  width: 600px;;
+}
+
+.form-create-post-body {
+  height: 200px;
+}
+
+.form-input {
+  display: block;
+  width: 300px;
+  margin: 20px;
+}
+
+.form-input-body {
+  height: 100px;
+}
+
+.person-list-item {
+  list-style: none;
+  margin: 20px;
+}
+
+.post-titles-container {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  margin: 0;
+  background-color: #FFCF6D;
+  border: 1px solid $medium-gray;
+}
+
+.post-titles-list-header {
+  font-weight: bold;
+}
+
+.post-title-list-item {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+.post-container {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  width:70%;
+  background-color: #FFCF6D;
+  border: 1px solid $medium-gray;
+}
+
+.bookmarks-section,
+.tags-sidebar {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  background-color: $light-gray;
+
+}
+
+.bookmarks-section {
+  width: 65%;
+  border: 1px solid blue;
+}
+
+.tags-sidebar {
+  width: 30%;
+  float: right;
+  border: 1px solid red;
+}
+
+.list-header {
+  text-align: center;
+}
+
+.post-prompt-heading {
+  font-weight: bold;
+  text-align: center;
+}
+
+.post-prompt-text {
+  font-size: 1.5em;
+  margin: 20px;
+  text-align: center;
 }

@@ -1,0 +1,8 @@
+<h1 class="post-title">{{title}}</h1>
+<p class="post-body">{{body}}</p>
+<p>posted on: {{created_at}}</p>
+{{#if edited_at}}
+  <p>edited on: {{edited_at}}</p>
+{{/if}}
+<button class="post-button-update">Edit post</button>
+<button class="post-button-delete">Delete post</button>

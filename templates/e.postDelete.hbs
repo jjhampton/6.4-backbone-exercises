@@ -1,0 +1,9 @@
+<h1 class="post-prompt">Are you sure you want to delete your blog post?</h1>
+
+<h2 class="post-title">{{title}}</h2>
+<p class="post-body">{{body}}</p>
+<p>posted on: {{created_at}}</p>
+{{#if edited_at}}
+  <p>edited on: {{edited_at}}</p>
+{{/if}}
+<button class="post-button-delete">Delete post permanently!</button>
